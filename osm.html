@@ -188,8 +188,7 @@
     // ---------------------------------- FONCTIONS TWITCH CHAT -------------------------------------
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
-        if (command == "start" && vote == false) {
-            //if (command === "start" && user.toLowerCase() === nomChaineTwitch.toLowerCase()) {
+        if (command === "start" && user.toLowerCase() === nomChaineTwitch.toLowerCase()) {
 
             if (!isNaN(Number.parseInt(message))) {
 
@@ -206,7 +205,7 @@
 
                     votes = [];
                     scoreManche = [];
-                    oldscoreTotal = [...scoreTotal];
+                    oldscoreTotal = JSON.parse(JSON.stringify(scoreTotal));
                     vote = true;
 
                     if (displayRound) {
@@ -217,7 +216,7 @@
             }
         }
 
-        if (command === "stop") {
+        if (command === "stop" && user.toLowerCase() === nomChaineTwitch.toLowerCase()) {
             vote = false;
             votes.sort(function (a, b) { return a.distance - b.distance; })
 
@@ -296,21 +295,21 @@
             }
         }
 
-        if (command === "score") {
+        if (command === "score" && user.toLowerCase() === nomChaineTwitch.toLowerCase()) {
             update.innerHTML = "<tr onclick=\"zoom(this)\" id=\"reset\"><th>Pseudo</th><th>Pays</th><th>Score</th></tr>"
             for (var i = 0; i < votes.length; i++) {
                 update.innerHTML += "<tr onclick=\"zoom(this)\" id=\"" + votes[i].user + "\"><td>" + votes[i].user + "</td><td>" + votes[i].pays.names[0] + "</td><td>" + scoreManche[i].score + "</td></tr>"
             }
         }
 
-        if (command === "distance") {
+        if (command === "distance" && user.toLowerCase() === nomChaineTwitch.toLowerCase()) {
             update.innerHTML = "<tr onclick=\"zoom(this)\" id=\"reset\"><th>Pseudo</th><th>Pays</th><th>Score</th></tr>"
             for (var i = 0; i < votes.length; i++) {
                 update.innerHTML += "<tr onclick=\"zoom(this)\" id=\"" + votes[i].user + "\"><td>" + votes[i].user + "</td><td>" + votes[i].pays.names[0] + "</td><td>" + votes[i].distance + " kms</td></tr>"
             }
         }
 
-        if (command === "total") {
+        if (command === "total" && user.toLowerCase() === nomChaineTwitch.toLowerCase()) {
             scoreTotal.sort(function (a, b) { return b.score - a.score; })
             update.innerHTML = "<tr onclick=\"zoom(this)\" id=\"reset\"><th>Pseudo</th><th>Total</th></tr>"
             for (var i = 0; i < scoreTotal.length; i++) {
@@ -318,9 +317,9 @@
             }
         }
 
-        if (command === "total") {
+        if (command === "cancel" && user.toLowerCase() === nomChaineTwitch.toLowerCase()) {
 
-            scoreTotal = [...oldscoreTotal];
+            scoreTotal = JSON.parse(JSON.stringify(oldscoreTotal));
             update.innerHTML = "<tr onclick=\"zoom(this)\" id=\"reset\"><th>Pseudo</th><th>Total</th></tr>"
             for (var i = 0; i < scoreTotal.length; i++) {
                 update.innerHTML += "<tr onclick=\"zoom(this)\" id=\"" + scoreTotal[i].user + "\"><td>" + scoreTotal[i].user + "</td><td>" + scoreTotal[i].score + "</td></tr>"
