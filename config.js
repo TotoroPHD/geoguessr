@@ -11,7 +11,7 @@ var googleMaps =
         // Round 4 :
         '<iframe src="https://www.google.com/maps/embed?pb=!4v1668033159542!6m8!1m7!1sXAmSMiEw36zSsOQO9nxddQ!2m2!1d-0.444755820265375!2d36.97583812800001!3f186.51127351449344!4f0.8941221602334224!5f0.7820865974627469" width="1720" height="1080" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         // Round 5 : 
-        '<iframe src="https://www.google.com/maps/embed?pb=!4v1668033245111!6m8!1m7!1sXaSmQBZlEd86fk1iYByXCQ!2m2!1d56.95756131891078!2d24.18953365922986!3f73.86868520074125!4f0.09349177793050956!5f0.7820865974627469" width="1720" height="1080" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        '<iframe src="https://www.google.com/maps/embed?pb=!4v1668033245111!6m8!1m7!1sXaSmQBZlEd86fk1iYByXCQ!2m2!1d56.95756131891078!2d24.18953365922986!3f73.86868520074125!4f0.09349177793050956!5f0.7820865974627469" width="1720" height="1080" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
     ]
 
 var listePays =
