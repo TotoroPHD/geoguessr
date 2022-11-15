@@ -20,7 +20,7 @@ var listePays =
         'Colombie',
         'Bangladesh',
         'Kenya',
-        'Lettonie'
+        'Lettonie',
     ]
 
 var displayRound = true;
